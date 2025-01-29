@@ -1,0 +1,198 @@
+[
+  {
+    "id": "0",
+    "icon": "red_bow",
+    "name": "红色蝴蝶结",
+    "description": "进入新一层时, 获得10护盾",
+    "price": "6"
+  },
+  {
+    "id": "1",
+    "icon": "hakurei_amulet",
+    "name": "博丽护符",
+    "description": "战斗前, 先对敌人造成5伤害",
+    "price": "8"
+  },
+  {
+    "id": "2",
+    "icon": "yinyang_jade",
+    "name": "阴阳玉",
+    "description": "战斗后, 对剩余所有敌人造成3伤害",
+    "price": "12"
+  },
+  {
+    "id": "3",
+    "icon": "wizard_hat",
+    "name": "魔女帽",
+    "description": "进入新一层时, 对所有敌人造成2伤害",
+    "price": "8"
+  },
+  {
+    "id": "4",
+    "icon": "broom",
+    "name": "扫帚",
+    "description": "移动后, 获得1护盾",
+    "price": "4"
+  },
+  {
+    "id": "5",
+    "icon": "bagua_furnace",
+    "name": "八卦炉",
+    "description": "使用技能后, 获得1魔力",
+    "price": "12"
+  },
+  {
+    "id": "6",
+    "icon": "monster_book",
+    "name": "妖魔书",
+    "description": "消灭[color=red]妖怪[/color]敌人时额外获得2金币",
+    "price": "12"
+  },
+  {
+    "id": "7",
+    "icon": "kitch_knife",
+    "name": "菜刀",
+    "description": "受到[color=red]人类[/color]敌人伤害减半",
+    "price": "8"
+  },
+  {
+    "id": "8",
+    "icon": "fairy_contract",
+    "name": "妖精契约",
+    "description": "对[color=red]妖精[/color]敌人造成伤害翻倍",
+    "price": "12"
+  },
+  {
+    "id": "9",
+    "icon": "sweet_potato",
+    "name": "烤红薯",
+    "description": "移动后, 所有[color=green]食物[/color]数值增加1",
+    "price": "12"
+  },
+  {
+    "id": "10",
+    "icon": "magic_bomb",
+    "name": "魔法炸弹",
+    "description": "进入新一层时, 随机消灭1个敌人",
+    "price": "16"
+  },
+  {
+    "id": "11",
+    "icon": "lunar_rocket",
+    "name": "火箭模型",
+    "description": "每向上移动一步, 获得2护盾",
+    "price": "8"
+  },
+  {
+    "id": "12",
+    "icon": "lunar_module",
+    "name": "月球车模型",
+    "description": "每向下移动一步, 恢复2生命",
+    "price": "8"
+  },
+  {
+    "id": "13",
+    "icon": "plumage",
+    "name": "龙鱼羽衣",
+    "description": "技能使用后, 恢复3生命",
+    "price": "8"
+  },
+  {
+    "id": "14",
+    "icon": "lunar_diary",
+    "name": "月时记",
+    "description": "技能使用后, 自动获得1格能量 (未实装)",
+    "price": "16"
+  },
+  {
+    "id": "15",
+    "icon": "moriya_amulet",
+    "name": "守矢护符",
+    "description": "进入新一层时, 恢复10生命",
+    "price": "8"
+  },
+  {
+    "id": "16",
+    "icon": "ghost_fan",
+    "name": "西行妖之扇",
+    "description": "战斗后, 生命上限增加1",
+    "price": "16"
+  },
+  {
+    "id": "17",
+    "icon": "golden_carrot",
+    "name": "金萝卜",
+    "description": "每移动一步, 所有[color=brown]资源[/color]数值增加1",
+    "price": "20"
+  },
+  {
+    "id": "18",
+    "icon": "lily_valley",
+    "name": "铃兰",
+    "description": "免疫中毒 (未实装)",
+    "price": "6"
+  },
+  {
+    "id": "19",
+    "icon": "auto_cleaner",
+    "name": "扫地机器人",
+    "description": "受到陷阱伤害减半",
+    "price": "20"
+  },
+  {
+    "id": "20",
+    "icon": "clover",
+    "name": "四叶草",
+    "description": "进入新一层时, 随机一个非敌人格子上的数值变为3倍",
+    "price": "6"
+  },
+  {
+    "id": "21",
+    "icon": "tengu_shield",
+    "name": "天狗盾",
+    "description": "进入新一层时, 如果没有护盾则获得20点护盾",
+    "price": "8"
+  },
+  {
+    "id": "22",
+    "icon": "shanghai_doll",
+    "name": "上海人偶",
+    "description": "[color=cyan]遗物[/color]造成的伤害也受魔力加成",
+    "price": "12"
+  },
+  {
+    "id": "23",
+    "icon": "tengu_feather",
+    "name": "鸦天狗羽毛",
+    "description": "没有护盾时, 受到伤害减少20%",
+    "price": "8"
+  },
+  {
+    "id": "24",
+    "icon": "knickerbockers",
+    "name": "灯笼裤",
+    "description": "护盾值大于0时, 若受到超过护盾值的伤害, 失去生命不会超过15点",
+    "price": "8"
+  },
+  {
+    "id": "25",
+    "icon": "tengu_mask",
+    "name": "天狗面具",
+    "description": "进入新关卡时, 获得2魔力",
+    "price": "8"
+  },
+  {
+    "id": "26",
+    "icon": "katana",
+    "name": "太刀",
+    "description": "连续消灭敌人时, 获得1魔力 (未实装)",
+    "price": "8"
+  },
+  {
+    "id": "27",
+    "icon": "red_diamond",
+    "name": "埃哲红石",
+    "description": "不能再恢复生命. 受到恢复生命效果改为增加1魔力",
+    "price": "16"
+  }
+]

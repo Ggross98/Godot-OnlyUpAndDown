@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://bo6gd0y5pdce2"]
+
+[ext_resource type="Script" path="res://scripts/ui/JumpingIconLabel.cs" id="1_4b0us"]
+[ext_resource type="Texture2D" uid="uid://bv8vtb1lkqgob" path="res://assets/sprites/icons/heart.png" id="2_t4xtx"]
+[ext_resource type="FontFile" uid="uid://c7ewpvq05lxaj" path="res://assets/fonts/Quenda.ttf" id="3_7cpum"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hs502"]
+font = ExtResource("3_7cpum")
+font_size = 24
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[node name="JumpingIconLabel" type="Control" node_paths=PackedStringArray("icon", "label")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 106.0
+offset_bottom = 40.0
+pivot_offset = Vector2(53, 20)
+script = ExtResource("1_4b0us")
+velocity_x_range = 0.0
+velocity_y0 = -400.0
+animStartDelay = 0.4
+icon = NodePath("HBoxContainer/Icon")
+label = NodePath("HBoxContainer/Label")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = -5
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("2_t4xtx")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_7cpum")
+text = "+12"
+label_settings = SubResource("LabelSettings_hs502")
+horizontal_alignment = 1
+vertical_alignment = 1

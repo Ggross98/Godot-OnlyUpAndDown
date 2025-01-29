@@ -1,0 +1,76 @@
+[gd_scene load_steps=17 format=3 uid="uid://d1bv4cyy0dvle"]
+
+[ext_resource type="Script" path="res://scripts/ui/SkillBar.cs" id="1_b22lc"]
+[ext_resource type="Texture2D" uid="uid://cqr3ipu340yy4" path="res://assets/sprites/icons/switch_west_light.png" id="2_2f75r"]
+[ext_resource type="Texture2D" uid="uid://cgoqybawmpthk" path="res://assets/sprites/skills/UNL_Reimu201.png" id="2_5rm17"]
+[ext_resource type="FontFile" uid="uid://b07s0gtfp5725" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_1mcr4"]
+[ext_resource type="Texture2D" uid="uid://cuainj0j2tf6d" path="res://assets/sprites/icons/switch_north_light.png" id="3_qdgr2"]
+[ext_resource type="Texture2D" uid="uid://dkdqvgspws03k" path="res://assets/sprites/icons/switch_east_light.png" id="4_kcbuk"]
+[ext_resource type="Texture2D" uid="uid://cyyiqcwuqlycu" path="res://assets/sprites/icons/switch_south_light.png" id="5_8d4n7"]
+[ext_resource type="Texture2D" uid="uid://fpb2sgl4jgnl" path="res://assets/sprites/icons/button_light.png" id="6_ydbas"]
+[ext_resource type="Texture2D" uid="uid://c7cvf8xmb30v" path="res://assets/sprites/icons/switch_west_dark.png" id="7_x35kb"]
+[ext_resource type="Texture2D" uid="uid://dp1llgih0spnp" path="res://assets/sprites/icons/switch_north_dark.png" id="8_y70sk"]
+[ext_resource type="Texture2D" uid="uid://v7g72fd2885h" path="res://assets/sprites/icons/switch_east_dark.png" id="9_i24oe"]
+[ext_resource type="Texture2D" uid="uid://hm0daca5ifrn" path="res://assets/sprites/icons/switch_south_dark.png" id="10_myfnl"]
+[ext_resource type="Texture2D" uid="uid://bcn0t2m8fmvbn" path="res://assets/sprites/icons/button_dark.png" id="11_4phuy"]
+[ext_resource type="Texture2D" uid="uid://yem123wxf6qv" path="res://assets/ui/SkillButton_1.png" id="12_tf8th"]
+
+[sub_resource type="Theme" id="Theme_cxygf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_x21nw"]
+font = ExtResource("3_1mcr4")
+font_size = 36
+
+[node name="SkillBar" type="Control" node_paths=PackedStringArray("buttonLabel", "stepIconParent", "skillIcon")]
+custom_minimum_size = Vector2(220, 50)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 220.0
+offset_bottom = 50.0
+script = ExtResource("1_b22lc")
+texturesActive = Array[Texture]([ExtResource("2_2f75r"), ExtResource("3_qdgr2"), ExtResource("4_kcbuk"), ExtResource("5_8d4n7"), ExtResource("6_ydbas")])
+texturesInactive = Array[Texture]([ExtResource("7_x35kb"), ExtResource("8_y70sk"), ExtResource("9_i24oe"), ExtResource("10_myfnl"), ExtResource("11_4phuy")])
+buttonLabel = NodePath("ButtonLabel")
+stepIconParent = NodePath("StepIconParent")
+skillIcon = NodePath("SkillIcon")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 220.0
+offset_bottom = 50.0
+texture = ExtResource("12_tf8th")
+expand_mode = 1
+
+[node name="SkillIcon" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 33.0
+offset_bottom = 47.0
+texture = ExtResource("2_5rm17")
+expand_mode = 1
+
+[node name="ButtonLabel" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 134.0
+offset_top = -24.0
+offset_right = 174.0
+offset_bottom = 26.0
+theme = SubResource("Theme_cxygf")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "A"
+label_settings = SubResource("LabelSettings_x21nw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StepIconParent" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 5.0
+offset_right = 211.0
+offset_bottom = 45.0
+mouse_filter = 2
+
+[connection signal="mouse_entered" from="SkillIcon" to="." method="MouseEnter"]
+[connection signal="mouse_exited" from="SkillIcon" to="." method="MouseExit"]

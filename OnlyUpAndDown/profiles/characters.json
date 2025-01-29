@@ -1,0 +1,66 @@
+[
+  {
+    "id": "100",
+    "spriteName": "reimu",
+    "name": "博丽灵梦",
+    "description": "",
+    "race": "0",
+    "baseHP": "50"
+  },
+  {
+    "id": "101",
+    "spriteName": "marisa",
+    "name": "雾雨魔理沙",
+    "description": "",
+    "race": "0",
+    "baseHP": "40"
+  },
+  {
+    "id": "0",
+    "spriteName": "cirno",
+    "name": "琪露诺",
+    "description": "",
+    "race": "1",
+    "baseHP": "8"
+  },
+  {
+    "id": "1",
+    "spriteName": "daiyousei",
+    "name": "大妖精",
+    "description": "",
+    "race": "1",
+    "baseHP": "5"
+  },
+  {
+    "id": "2",
+    "spriteName": "kosuzu",
+    "name": "本居小铃",
+    "description": "",
+    "race": "0",
+    "baseHP": "8"
+  },
+  {
+    "id": "3",
+    "spriteName": "akyuu",
+    "name": "稗田阿求",
+    "description": "",
+    "race": "0",
+    "baseHP": "5"
+  },
+  {
+    "id": "4",
+    "spriteName": "rumia",
+    "name": "露米娅",
+    "description": "",
+    "race": "2",
+    "baseHP": "5"
+  },
+  {
+    "id": "5",
+    "spriteName": "meirin",
+    "name": "红美铃",
+    "description": "",
+    "race": "2",
+    "baseHP": "8"
+  }
+]

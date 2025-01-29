@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfkgkva3xrcwq"]
+
+[ext_resource type="Script" path="res://scripts/ui/IconLabel.cs" id="1_qfv71"]
+[ext_resource type="Texture2D" uid="uid://bv8vtb1lkqgob" path="res://assets/sprites/icons/heart.png" id="2_gjop5"]
+[ext_resource type="FontFile" uid="uid://c7ewpvq05lxaj" path="res://assets/fonts/Quenda.ttf" id="3_bq87j"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hs502"]
+font = ExtResource("3_bq87j")
+font_size = 30
+
+[node name="IconLabel" type="Control" node_paths=PackedStringArray("icon", "label")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 106.0
+offset_bottom = 40.0
+script = ExtResource("1_qfv71")
+icon = NodePath("HBoxContainer/Icon")
+label = NodePath("HBoxContainer/Label")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("2_gjop5")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "999"
+label_settings = SubResource("LabelSettings_hs502")
+horizontal_alignment = 1
+vertical_alignment = 1

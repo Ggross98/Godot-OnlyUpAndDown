@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjfydp84d6qyn"]
+
+[ext_resource type="Script" path="res://scripts/ui/PopupIcon.cs" id="1_ufdq6"]
+[ext_resource type="Texture2D" uid="uid://cvi1ccoenwqpm" path="res://assets/sprites/items/wizard_hat.png" id="2_kg0op"]
+
+[node name="PopupIcon" type="Control" node_paths=PackedStringArray("rect")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 1
+script = ExtResource("1_ufdq6")
+rect = NodePath("TextureRect")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_kg0op")
+expand_mode = 1
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(40, 40)
+anchors_preset = 0
+offset_right = 50.0
+offset_bottom = 50.0
+mouse_filter = 1

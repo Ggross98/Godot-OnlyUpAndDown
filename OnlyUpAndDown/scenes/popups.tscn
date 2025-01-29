@@ -1,0 +1,69 @@
+[gd_scene load_steps=6 format=3 uid="uid://b2e4n6qingg7i"]
+
+[ext_resource type="Script" path="res://scripts/ui/Popups.cs" id="1_y3qqa"]
+[ext_resource type="Texture2D" uid="uid://dnmj8r7f4w23l" path="res://assets/ui/frame_1.png" id="2_4nni0"]
+[ext_resource type="FontFile" uid="uid://cw6cph545w16n" path="res://assets/fonts/LiuSong.ttf" id="2_dlo6u"]
+[ext_resource type="FontFile" uid="uid://d0bq3tvnw8p6h" path="res://assets/fonts/FangSong.ttf" id="3_xp1sc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_shxhd"]
+font = ExtResource("2_dlo6u")
+font_size = 24
+
+[node name="Popups" type="Control" node_paths=PackedStringArray("popupPanel", "nameLabel", "infoLabel", "stepIconParent")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+script = ExtResource("1_y3qqa")
+popupPanel = NodePath("CanvasLayer/PopupPanel")
+nameLabel = NodePath("CanvasLayer/PopupPanel/TextureRect/VBoxContainer/Name")
+infoLabel = NodePath("CanvasLayer/PopupPanel/TextureRect/VBoxContainer/Description")
+stepIconParent = NodePath("CanvasLayer/PopupPanel/TextureRect/VBoxContainer/StepIconParent")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PopupPanel" type="PopupPanel" parent="CanvasLayer"]
+transparent_bg = true
+handle_input_locally = false
+gui_disable_input = true
+mode = 1
+position = Vector2i(200, 200)
+size = Vector2i(300, 200)
+visible = true
+wrap_controls = false
+transparent = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/PopupPanel"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 296.0
+offset_bottom = 196.0
+mouse_filter = 2
+texture = ExtResource("2_4nni0")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PopupPanel/TextureRect"]
+offset_left = 15.0
+offset_top = 10.0
+offset_right = 285.0
+offset_bottom = 190.0
+
+[node name="Name" type="Label" parent="CanvasLayer/PopupPanel/TextureRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+mouse_filter = 1
+text = "对象名称"
+label_settings = SubResource("LabelSettings_shxhd")
+
+[node name="Description" type="RichTextLabel" parent="CanvasLayer/PopupPanel/TextureRect/VBoxContainer"]
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 2
+mouse_filter = 1
+theme_override_fonts/normal_font = ExtResource("3_xp1sc")
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "对象描述"
+
+[node name="StepIconParent" type="HBoxContainer" parent="CanvasLayer/PopupPanel/TextureRect/VBoxContainer"]
+layout_mode = 2

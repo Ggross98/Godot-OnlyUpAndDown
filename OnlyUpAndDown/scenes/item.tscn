@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://08t68ns7quns"]
+
+[ext_resource type="Script" path="res://scripts/Item.cs" id="1_rwjgc"]
+[ext_resource type="Shader" path="res://shaders/sprite_outline.gdshader" id="2_rog3r"]
+[ext_resource type="Texture2D" uid="uid://bjk6ey4iwmsf0" path="res://assets/sprites/items/blue_potion.png" id="2_rse30"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_815jl"]
+shader = ExtResource("2_rog3r")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 4.8
+
+[node name="Item" type="Node2D" node_paths=PackedStringArray("sprite")]
+script = ExtResource("1_rwjgc")
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_815jl")
+position = Vector2(0, -17)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_rse30")
+
+[node name="Control" type="Control" parent="."]
+z_index = 10
+layout_mode = 3
+anchors_preset = 0
+offset_left = -21.0
+offset_top = -31.0
+offset_right = 19.0
+offset_bottom = 9.0
+mouse_filter = 1
+
+[connection signal="mouse_entered" from="Control" to="." method="MouseEnter"]
+[connection signal="mouse_exited" from="Control" to="." method="MouseExit"]

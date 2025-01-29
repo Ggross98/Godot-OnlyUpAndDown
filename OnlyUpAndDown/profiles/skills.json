@@ -1,0 +1,146 @@
+[
+  {
+    "id": "0",
+    "icon": "Soku_common_card000",
+    "name": "灵击",
+    "description": "对遭遇的敌人造成4点伤害",
+    "price": "8",
+    "cost": [4, 4]
+  },
+  {
+    "id": "1",
+    "icon": "Soku_common_card001",
+    "name": "魔法药水",
+    "description": "获得1魔力, 不受魔力加成",
+    "price": "16",
+    "cost": [1, 3, 1]
+  },
+  {
+    "id": "2",
+    "icon": "Soku_common_card004",
+    "name": "替身人偶",
+    "description": "获得5护盾",
+    "price": "8",
+    "cost": [3, 1, 3]
+  },
+  {
+    "id": "3",
+    "icon": "Soku_common_card012",
+    "name": "铜钱",
+    "description": "获得2金币, 不受魔力加成",
+    "price": "8",
+    "cost": [1, 3, 3]
+  },
+  {
+    "id": "4",
+    "icon": "SWR_Reimu201",
+    "name": "梦想妙珠",
+    "description": "对1个随机敌人造成10伤害",
+    "price": "12",
+    "cost": [3, 3]
+  },
+  {
+    "id": "5",
+    "icon": "UNL_Reimu201",
+    "name": "封魔阵",
+    "description": "对遭遇的敌人造成8伤害",
+    "price": "12",
+    "cost": [3, 1, 1]
+  },
+  {
+    "id": "6",
+    "icon": "SWR_Reimu208",
+    "name": "梦想天生",
+    "description": "随机消灭2个敌人",
+    "price": "16",
+    "cost": [1, 3, 3, 1]
+  },
+  {
+    "id": "7",
+    "icon": "UNL_Marisaspell4",
+    "name": "魔法废弃炸弹",
+    "description": "消灭1个随机敌人",
+    "price": "16",
+    "cost": [4, 4, 4]
+  },
+  {
+    "id": "8",
+    "icon": "Swr_marisa_spc_01",
+    "name": "极限火花",
+    "description": "对前进方向上所有敌人造成6伤害",
+    "price": "16",
+    "cost": [1, 3, 1, 4]
+  },
+  {
+    "id": "9",
+    "icon": "Ten_sp_4",
+    "name": "先忧后乐之剑",
+    "description": "对所有敌人分摊20点伤害",
+    "price": "16",
+    "cost": [3, 3, 1, 1]
+  },
+  {
+    "id": "10",
+    "icon": "Utsuho_Spell03",
+    "name": "热核护罩",
+    "description": "对遭遇的敌人造成等于护盾值的伤害",
+    "price": "12",
+    "cost": [1, 3]
+  },
+  {
+    "id": "11",
+    "icon": "SWR_Yuyuko_Sc3",
+    "name": "无寿之梦",
+    "description": "对所有敌人造成等于已损失生命的伤害",
+    "price": "12",
+    "cost": [1, 3, 1]
+  },
+  {
+    "id": "12",
+    "icon": "Swr_sakuya_spc_05",
+    "name": "咲夜的世界",
+    "description": "为其他所有技能增添一步 (未实装)",
+    "price": "16",
+    "cost": [3, 3, 3]
+  },
+  {
+    "id": "13",
+    "icon": "SWR_Komachi_Sc4",
+    "name": "八重雾中渡",
+    "description": "对所有敌人造成等于金币数的伤害, 然后丢失1金币",
+    "price": "16",
+    "cost": [1, 1, 3, 3]
+  },
+  {
+    "id": "14",
+    "icon": "Rei_spe_8",
+    "name": "国士无双之药",
+    "description": "恢复5生命, 获得5护盾",
+    "price": "12",
+    "cost": [3, 1, 3, 1]
+  },
+  {
+    "id": "15",
+    "icon": "Swr_remilia_spc_04",
+    "name": "红色不夜城",
+    "description": "失去一半生命, 获得等量护盾. 生命低于5点时不触发",
+    "price": "12",
+    "cost": [4, 4, 1, 1]
+  },
+  {
+    "id": "16",
+    "icon": "Swr_patchouli_spc_04",
+    "name": "皇家烈焰",
+    "description": "对所有敌人造成4点伤害",
+    "price": "16",
+    "cost": [1, 3, 1, 3]
+  },
+  {
+    "id": "17",
+    "icon": "Soku_common_card015",
+    "name": "病气平愈护符",
+    "description": "恢复6生命",
+    "price": "12",
+    "cost": [4, 4, 4]
+  }
+]

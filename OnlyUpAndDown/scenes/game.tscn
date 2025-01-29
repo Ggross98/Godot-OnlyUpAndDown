@@ -1,0 +1,273 @@
+[gd_scene load_steps=24 format=3 uid="uid://bs83n4bjg6sxr"]
+
+[ext_resource type="Script" path="res://scripts/GameManager.cs" id="1_hc0th"]
+[ext_resource type="Script" path="res://scripts/TileManager.cs" id="1_u5gmo"]
+[ext_resource type="Script" path="res://scripts/grid/Grid.cs" id="1_up4th"]
+[ext_resource type="Script" path="res://scripts/CharacterManager.cs" id="4_2q7fd"]
+[ext_resource type="PackedScene" uid="uid://hquk1gi4gins" path="res://scenes/tile.tscn" id="4_mkx1p"]
+[ext_resource type="PackedScene" uid="uid://b7u77m3q4xqql" path="res://scenes/character.tscn" id="6_2mc5k"]
+[ext_resource type="Script" path="res://scripts/ItemManager.cs" id="7_xdojt"]
+[ext_resource type="PackedScene" uid="uid://08t68ns7quns" path="res://scenes/item.tscn" id="8_r0rqs"]
+[ext_resource type="Script" path="res://scripts/ui/UIManager.cs" id="9_drqs7"]
+[ext_resource type="PackedScene" uid="uid://bfkgkva3xrcwq" path="res://scenes/icon_label.tscn" id="10_iiyxm"]
+[ext_resource type="PackedScene" uid="uid://dtpbc2n5oa7wt" path="res://scenes/artifact_icon.tscn" id="11_ejbts"]
+[ext_resource type="FontFile" uid="uid://cw6cph545w16n" path="res://assets/fonts/LiuSong.ttf" id="12_brwvq"]
+[ext_resource type="FontFile" uid="uid://d0bq3tvnw8p6h" path="res://assets/fonts/FangSong.ttf" id="13_3xfxa"]
+[ext_resource type="Script" path="res://scripts/ui/PausePanel.cs" id="14_8q80q"]
+[ext_resource type="Script" path="res://scripts/ui/JumpingLabelController.cs" id="14_wrb7y"]
+[ext_resource type="Script" path="res://scripts/ui/OverPanel.cs" id="15_4ahwl"]
+[ext_resource type="Script" path="res://scripts/ui/PlayerStatusUI.cs" id="15_4jnbj"]
+[ext_resource type="Script" path="res://scripts/ui/SkillBarManager.cs" id="15_w5f4e"]
+[ext_resource type="Script" path="res://scripts/ui/ArtifactsUI.cs" id="16_1cc6v"]
+[ext_resource type="FontFile" uid="uid://c7ewpvq05lxaj" path="res://assets/fonts/Quenda.ttf" id="16_vugul"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_4rram"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bgm66"]
+font = ExtResource("12_brwvq")
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_u0vn2"]
+font = ExtResource("16_vugul")
+font_size = 28
+
+[node name="Game" type="Node2D" node_paths=PackedStringArray("grid", "tileManager", "characterManager", "itemManager", "uiManager")]
+script = ExtResource("1_hc0th")
+grid = NodePath("GameField/Grid")
+tileManager = NodePath("GameField/Grid/Tiles")
+characterManager = NodePath("GameField/Grid/Characters")
+itemManager = NodePath("GameField/Grid/Items")
+uiManager = NodePath("GameField/UI")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="GameField" type="Node2D" parent="."]
+
+[node name="Background" type="Sprite2D" parent="GameField"]
+visible = false
+scale = Vector2(1364, 526)
+texture = SubResource("CanvasTexture_4rram")
+
+[node name="Grid" type="Node2D" parent="GameField"]
+position = Vector2(0, 17)
+scale = Vector2(1.1, 1.1)
+script = ExtResource("1_up4th")
+
+[node name="Tiles" type="Node2D" parent="GameField/Grid" node_paths=PackedStringArray("parent")]
+y_sort_enabled = true
+script = ExtResource("1_u5gmo")
+textureCount = PackedInt32Array(2, 2, 2, 2, 2)
+parent = NodePath(".")
+prefab = ExtResource("4_mkx1p")
+
+[node name="Characters" type="Node2D" parent="GameField/Grid" node_paths=PackedStringArray("parent")]
+script = ExtResource("4_2q7fd")
+parent = NodePath(".")
+prefab = ExtResource("6_2mc5k")
+
+[node name="Items" type="Node2D" parent="GameField/Grid" node_paths=PackedStringArray("parent")]
+script = ExtResource("7_xdojt")
+parent = NodePath(".")
+prefab = ExtResource("8_r0rqs")
+
+[node name="UI" type="Control" parent="GameField" node_paths=PackedStringArray("artifactsUI", "playerStatusUI", "skillBarManager", "jumpingLabelController", "overPanel", "pausePanel", "levelLabel")]
+custom_minimum_size = Vector2(1366, 768)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -683.0
+offset_top = -384.0
+offset_right = 683.0
+offset_bottom = 384.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("9_drqs7")
+artifactsUI = NodePath("Artifacts")
+playerStatusUI = NodePath("PlayerStatus")
+skillBarManager = NodePath("Skills")
+jumpingLabelController = NodePath("JumpingLabels")
+overPanel = NodePath("OverPanel")
+pausePanel = NodePath("PausePanel")
+levelLabel = NodePath("GameStatus/LevelLabel")
+
+[node name="OverPanel" type="Panel" parent="GameField/UI" node_paths=PackedStringArray("title")]
+visible = false
+z_index = 10
+layout_mode = 0
+offset_top = 100.0
+offset_right = 1366.0
+offset_bottom = 680.0
+script = ExtResource("15_4ahwl")
+title = NodePath("Label")
+
+[node name="ColorRect" type="ColorRect" parent="GameField/UI/OverPanel"]
+layout_mode = 0
+offset_right = 1366.0
+offset_bottom = 580.0
+color = Color(0.151276, 0.151276, 0.151276, 1)
+
+[node name="Label" type="Label" parent="GameField/UI/OverPanel"]
+layout_mode = 0
+offset_top = 88.0
+offset_right = 1366.0
+offset_bottom = 152.0
+text = "游戏结束"
+label_settings = SubResource("LabelSettings_bgm66")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuButton" type="Button" parent="GameField/UI/OverPanel"]
+layout_mode = 0
+offset_left = 533.0
+offset_top = 378.0
+offset_right = 833.0
+offset_bottom = 478.0
+theme_override_fonts/font = ExtResource("13_3xfxa")
+theme_override_font_sizes/font_size = 32
+text = "返回主菜单"
+
+[node name="PausePanel" type="Panel" parent="GameField/UI"]
+visible = false
+z_index = 10
+layout_mode = 0
+offset_top = 100.0
+offset_right = 1366.0
+offset_bottom = 680.0
+script = ExtResource("14_8q80q")
+
+[node name="ColorRect" type="ColorRect" parent="GameField/UI/PausePanel"]
+layout_mode = 0
+offset_right = 1366.0
+offset_bottom = 580.0
+color = Color(0.151276, 0.151276, 0.151276, 1)
+
+[node name="Label" type="Label" parent="GameField/UI/PausePanel"]
+layout_mode = 0
+offset_top = 88.0
+offset_right = 1366.0
+offset_bottom = 152.0
+text = "暂停"
+label_settings = SubResource("LabelSettings_bgm66")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResumeButton" type="Button" parent="GameField/UI/PausePanel"]
+layout_mode = 0
+offset_left = 533.0
+offset_top = 279.0
+offset_right = 833.0
+offset_bottom = 379.0
+theme_override_fonts/font = ExtResource("13_3xfxa")
+theme_override_font_sizes/font_size = 32
+text = "继续游戏"
+
+[node name="MenuButton" type="Button" parent="GameField/UI/PausePanel"]
+layout_mode = 0
+offset_left = 533.0
+offset_top = 418.0
+offset_right = 833.0
+offset_bottom = 518.0
+theme_override_colors/font_color = Color(0.8, 0, 0, 1)
+theme_override_fonts/font = ExtResource("13_3xfxa")
+theme_override_font_sizes/font_size = 32
+text = "放弃游戏"
+
+[node name="PlayerStatus" type="Control" parent="GameField/UI" node_paths=PackedStringArray("hp", "shield", "money", "mana", "keys")]
+anchors_preset = 0
+offset_left = 25.0
+offset_top = 8.0
+offset_right = 525.0
+offset_bottom = 48.0
+mouse_filter = 2
+script = ExtResource("15_4jnbj")
+hp = NodePath("HP")
+shield = NodePath("Shield")
+money = NodePath("Money")
+mana = NodePath("Mana")
+keys = NodePath("Key")
+
+[node name="HP" parent="GameField/UI/PlayerStatus" instance=ExtResource("10_iiyxm")]
+
+[node name="Shield" parent="GameField/UI/PlayerStatus" instance=ExtResource("10_iiyxm")]
+offset_left = 130.0
+offset_right = 170.0
+
+[node name="Money" parent="GameField/UI/PlayerStatus" instance=ExtResource("10_iiyxm")]
+offset_left = 260.0
+offset_right = 300.0
+
+[node name="Mana" parent="GameField/UI/PlayerStatus" instance=ExtResource("10_iiyxm")]
+offset_left = 390.0
+offset_right = 430.0
+
+[node name="Key" parent="GameField/UI/PlayerStatus" instance=ExtResource("10_iiyxm")]
+visible = false
+offset_left = 520.0
+offset_right = 560.0
+
+[node name="Artifacts" type="Control" parent="GameField/UI" node_paths=PackedStringArray("artifactParent")]
+anchors_preset = 0
+offset_left = 25.0
+offset_top = 62.0
+offset_right = 525.0
+offset_bottom = 102.0
+script = ExtResource("16_1cc6v")
+artifactPrefab = ExtResource("11_ejbts")
+artifactParent = NodePath("HBoxContainer")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameField/UI/Artifacts"]
+layout_mode = 0
+offset_top = -5.0
+offset_right = 500.0
+offset_bottom = 35.0
+
+[node name="GameStatus" type="Control" parent="GameField/UI"]
+anchors_preset = 0
+offset_left = 1293.0
+offset_top = 8.0
+offset_right = 1333.0
+offset_bottom = 48.0
+mouse_filter = 2
+
+[node name="LevelLabel" type="Label" parent="GameField/UI/GameStatus"]
+layout_mode = 0
+offset_left = -147.0
+offset_right = 40.0
+offset_bottom = 40.0
+text = "Level 1-1"
+label_settings = SubResource("LabelSettings_u0vn2")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Skills" type="Control" parent="GameField/UI" node_paths=PackedStringArray("skillBarParent")]
+z_index = 6
+anchors_preset = 0
+offset_top = 697.0
+offset_right = 1366.0
+offset_bottom = 747.0
+mouse_filter = 1
+script = ExtResource("15_w5f4e")
+skillBarParent = NodePath("SkillBarParent")
+
+[node name="SkillBarParent" type="HBoxContainer" parent="GameField/UI/Skills"]
+layout_mode = 0
+offset_right = 1366.0
+offset_bottom = 50.0
+alignment = 1
+
+[node name="JumpingLabels" type="Control" parent="GameField/UI" node_paths=PackedStringArray("labelParent")]
+z_index = 8
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+script = ExtResource("14_wrb7y")
+labelParent = NodePath(".")
+
+[connection signal="pressed" from="GameField/UI/OverPanel/MenuButton" to="." method="QuitGame"]
+[connection signal="pressed" from="GameField/UI/PausePanel/ResumeButton" to="." method="Resume"]
+[connection signal="pressed" from="GameField/UI/PausePanel/MenuButton" to="." method="QuitGame"]

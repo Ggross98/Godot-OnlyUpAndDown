@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpq76sch2bx4r"]
+
+[ext_resource type="Texture2D" uid="uid://bcn0t2m8fmvbn" path="res://assets/sprites/icons/button_dark.png" id="1_u5i4q"]
+[ext_resource type="Script" path="res://scripts/ui/StepIcon.cs" id="2_5wxdl"]
+
+[node name="StepIcon" type="Control" node_paths=PackedStringArray("rect")]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 35.0
+offset_bottom = 35.0
+mouse_filter = 2
+script = ExtResource("2_5wxdl")
+rect = NodePath("TextureRect")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_u5i4q")
+expand_mode = 1

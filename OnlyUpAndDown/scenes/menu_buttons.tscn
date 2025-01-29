@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://baa5iuh7qba28"]
+
+[ext_resource type="FontFile" uid="uid://d0bq3tvnw8p6h" path="res://assets/fonts/FangSong.ttf" id="1_3p2tb"]
+
+[node name="Buttons" type="VBoxContainer"]
+offset_left = 583.0
+offset_top = 309.0
+offset_right = 783.0
+offset_bottom = 709.0
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="StartButton" type="Button" parent="."]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_3p2tb")
+theme_override_font_sizes/font_size = 32
+text = "开始游戏"
+
+[node name="TutorialButton" type="Button" parent="."]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_3p2tb")
+theme_override_font_sizes/font_size = 32
+text = "玩法说明"
+
+[node name="QuitButton" type="Button" parent="."]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_3p2tb")
+theme_override_font_sizes/font_size = 32
+text = "退出游戏"

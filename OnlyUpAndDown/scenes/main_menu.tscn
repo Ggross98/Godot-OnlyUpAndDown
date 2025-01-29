@@ -1,0 +1,155 @@
+[gd_scene load_steps=10 format=3 uid="uid://6ll8hcsb6dvt"]
+
+[ext_resource type="Script" path="res://scripts/MainMenu.cs" id="1_vy60x"]
+[ext_resource type="FontFile" uid="uid://coyjmv7l0xhcd" path="res://assets/fonts/PixelSong.ttf" id="2_1dohb"]
+[ext_resource type="FontFile" uid="uid://cw6cph545w16n" path="res://assets/fonts/LiuSong.ttf" id="2_lxm6r"]
+[ext_resource type="FontFile" uid="uid://d0bq3tvnw8p6h" path="res://assets/fonts/FangSong.ttf" id="3_1vsxf"]
+[ext_resource type="Script" path="res://scripts/ui/OverPanel.cs" id="3_wdxwl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xvjtu"]
+font = ExtResource("2_lxm6r")
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_l50pa"]
+font = ExtResource("3_1vsxf")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_2qykq"]
+font = ExtResource("2_1dohb")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_bg1nt"]
+font = ExtResource("2_lxm6r")
+font_size = 24
+
+[node name="MainMenu" type="Node2D" node_paths=PackedStringArray("tutorialPanel", "tutorial")]
+script = ExtResource("1_vy60x")
+tutorialPanel = NodePath("Panel/TutorialPanel")
+tutorial = NodePath("Panel/TutorialPanel/Description")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1366.0
+offset_bottom = 768.0
+
+[node name="MainTitle" type="Label" parent="Panel"]
+layout_mode = 0
+offset_top = 100.0
+offset_right = 1366.0
+offset_bottom = 165.0
+text = "幻想乡轻松探险"
+label_settings = SubResource("LabelSettings_xvjtu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MainTitle" type="Label" parent="Panel/MainTitle"]
+layout_mode = 0
+offset_top = 74.0
+offset_right = 1366.0
+offset_bottom = 139.0
+text = "- Only Up and Down -"
+label_settings = SubResource("LabelSettings_l50pa")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 583.0
+offset_top = 309.0
+offset_right = 783.0
+offset_bottom = 709.0
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="StartButton" type="Button" parent="Panel/Buttons"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_1vsxf")
+theme_override_font_sizes/font_size = 32
+text = "开始游戏"
+
+[node name="TutorialButton" type="Button" parent="Panel/Buttons"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_1vsxf")
+theme_override_font_sizes/font_size = 32
+text = "玩法说明"
+
+[node name="QuitButton" type="Button" parent="Panel/Buttons"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_1vsxf")
+theme_override_font_sizes/font_size = 32
+text = "退出游戏"
+
+[node name="TutorialPanel" type="Panel" parent="Panel" node_paths=PackedStringArray("title")]
+z_index = 10
+layout_mode = 0
+offset_left = 83.0
+offset_top = 249.0
+offset_right = 1283.0
+offset_bottom = 699.0
+script = ExtResource("3_wdxwl")
+title = NodePath("Label")
+
+[node name="ColorRect" type="ColorRect" parent="Panel/TutorialPanel"]
+layout_mode = 0
+offset_right = 1200.0
+offset_bottom = 450.0
+color = Color(0.151276, 0.151276, 0.151276, 1)
+
+[node name="Label" type="Label" parent="Panel/TutorialPanel"]
+layout_mode = 0
+offset_top = 12.0
+offset_right = 1200.0
+offset_bottom = 76.0
+text = "玩法说明"
+label_settings = SubResource("LabelSettings_2qykq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuButton" type="Button" parent="Panel/TutorialPanel"]
+layout_mode = 0
+offset_left = 1000.0
+offset_top = 18.0
+offset_right = 1100.0
+offset_bottom = 68.0
+theme_override_fonts/font = ExtResource("2_1dohb")
+theme_override_font_sizes/font_size = 32
+text = "关闭"
+
+[node name="NextButton" type="Button" parent="Panel/TutorialPanel"]
+layout_mode = 0
+offset_left = 1000.0
+offset_top = 378.0
+offset_right = 1104.0
+offset_bottom = 428.0
+theme_override_fonts/font = ExtResource("2_1dohb")
+theme_override_font_sizes/font_size = 32
+text = "下一页"
+
+[node name="Description" type="Label" parent="Panel/TutorialPanel"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 100.0
+offset_right = 1150.0
+offset_bottom = 400.0
+text = "目标：在不同地图中击败敌人、前往终点
+
+操作：使用WS或上下键控制自机向前方移动。进入一格后将会进入战斗或拾取道具
+
+关卡：当前游戏共有6个关卡，每一个关卡共5层。到达每层最后一格后自动进入下一层
+
+生命与护盾：战斗或陷阱可能造成伤害，先损伤护甲，护甲归零后再损伤生命。生命归零后游戏结束
+
+技能：下方界面是技能栏。每个技能有充能需求，"
+label_settings = SubResource("LabelSettings_bg1nt")
+autowrap_mode = 1
+
+[connection signal="pressed" from="Panel/Buttons/StartButton" to="." method="GotoStageSelect"]
+[connection signal="pressed" from="Panel/Buttons/TutorialButton" to="." method="ShowTutorial"]
+[connection signal="pressed" from="Panel/Buttons/QuitButton" to="." method="Quit"]
+[connection signal="pressed" from="Panel/TutorialPanel/MenuButton" to="." method="HideTutorial"]
+[connection signal="pressed" from="Panel/TutorialPanel/NextButton" to="." method="TutorialNext"]

@@ -1,0 +1,209 @@
+[gd_scene load_steps=15 format=3 uid="uid://dp8t1m43kwu12"]
+
+[ext_resource type="Script" path="res://scripts/StageSelect.cs" id="1_uhy55"]
+[ext_resource type="Texture2D" uid="uid://bdghjkvo241em" path="res://assets/sprites/characters/reimu.png" id="2_1a0tb"]
+[ext_resource type="FontFile" uid="uid://cw6cph545w16n" path="res://assets/fonts/LiuSong.ttf" id="2_minin"]
+[ext_resource type="Texture2D" uid="uid://cgbn3rkxv721f" path="res://assets/sprites/characters/marisa.png" id="3_7fvy6"]
+[ext_resource type="FontFile" uid="uid://d0bq3tvnw8p6h" path="res://assets/fonts/FangSong.ttf" id="3_rdy3w"]
+[ext_resource type="PackedScene" uid="uid://cjfydp84d6qyn" path="res://scenes/popup_icon.tscn" id="5_vggt4"]
+[ext_resource type="Script" path="res://scripts/ui/PlayerStatusUI.cs" id="6_8d8b0"]
+[ext_resource type="Texture2D" uid="uid://c3og0uq6k11id" path="res://assets/sprites/skills/UNL_Marisaspell1.png" id="6_qshse"]
+[ext_resource type="PackedScene" uid="uid://bfkgkva3xrcwq" path="res://scenes/icon_label.tscn" id="7_g24v5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1b8nr"]
+font = ExtResource("2_minin")
+font_size = 64
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2g4v"]
+atlas = ExtResource("2_1a0tb")
+region = Rect2(29, 51, 71, 91)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rnxan"]
+atlas = ExtResource("3_7fvy6")
+region = Rect2(29, 51, 71, 91)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jyt8a"]
+font = ExtResource("3_rdy3w")
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_ady3o"]
+font = ExtResource("3_rdy3w")
+font_size = 32
+
+[node name="StageSelect" type="Node2D" node_paths=PackedStringArray("nameLabel", "playerStatusUI", "popupIcons")]
+script = ExtResource("1_uhy55")
+nameLabel = NodePath("Panel/Name")
+playerStatusUI = NodePath("Panel/Info/VBoxContainer/StartStatus/PlayerStatus")
+popupIcons = [NodePath("Panel/Info/VBoxContainer/StartArtifact/PopupIcon"), NodePath("Panel/Info/VBoxContainer/StartSkill/PopupIcon")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1366.0
+offset_bottom = 768.0
+
+[node name="Title" type="Label" parent="Panel"]
+layout_mode = 0
+offset_top = 100.0
+offset_right = 1366.0
+offset_bottom = 185.0
+text = "选择探险角色"
+label_settings = SubResource("LabelSettings_1b8nr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Players" type="HBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 470.0
+offset_top = 225.0
+offset_right = 946.0
+offset_bottom = 425.0
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Player0" type="Button" parent="Panel/Players"]
+custom_minimum_size = Vector2(150, 200)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/Players/Player0"]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 200.0
+texture = SubResource("AtlasTexture_d2g4v")
+
+[node name="Player1" type="Button" parent="Panel/Players"]
+custom_minimum_size = Vector2(150, 200)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/Players/Player1"]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 200.0
+texture = SubResource("AtlasTexture_rnxan")
+
+[node name="Name" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 549.0
+offset_right = 293.0
+offset_bottom = 597.0
+text = "博丽灵梦"
+label_settings = SubResource("LabelSettings_jyt8a")
+
+[node name="Info" type="Control" parent="Panel"]
+anchors_preset = 0
+offset_left = 368.0
+offset_top = 481.0
+offset_right = 768.0
+offset_bottom = 681.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/Info"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 20
+
+[node name="StartStatus" type="HBoxContainer" parent="Panel/Info/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="Panel/Info/VBoxContainer/StartStatus"]
+layout_mode = 2
+text = "初始属性"
+label_settings = SubResource("LabelSettings_ady3o")
+
+[node name="PlayerStatus" type="Control" parent="Panel/Info/VBoxContainer/StartStatus" node_paths=PackedStringArray("hp", "shield", "money", "mana", "keys")]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("6_8d8b0")
+hp = NodePath("HP")
+shield = NodePath("Shield")
+money = NodePath("Money")
+mana = NodePath("Mana")
+keys = NodePath("Key")
+
+[node name="HP" parent="Panel/Info/VBoxContainer/StartStatus/PlayerStatus" instance=ExtResource("7_g24v5")]
+
+[node name="Shield" parent="Panel/Info/VBoxContainer/StartStatus/PlayerStatus" instance=ExtResource("7_g24v5")]
+offset_left = 130.0
+offset_right = 170.0
+
+[node name="Money" parent="Panel/Info/VBoxContainer/StartStatus/PlayerStatus" instance=ExtResource("7_g24v5")]
+offset_left = 260.0
+offset_right = 300.0
+
+[node name="Mana" parent="Panel/Info/VBoxContainer/StartStatus/PlayerStatus" instance=ExtResource("7_g24v5")]
+offset_left = 390.0
+offset_right = 430.0
+
+[node name="Key" parent="Panel/Info/VBoxContainer/StartStatus/PlayerStatus" instance=ExtResource("7_g24v5")]
+visible = false
+offset_left = 520.0
+offset_right = 560.0
+
+[node name="StartArtifact" type="HBoxContainer" parent="Panel/Info/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="Panel/Info/VBoxContainer/StartArtifact"]
+layout_mode = 2
+text = "初始遗物"
+label_settings = SubResource("LabelSettings_ady3o")
+
+[node name="PopupIcon" parent="Panel/Info/VBoxContainer/StartArtifact" instance=ExtResource("5_vggt4")]
+layout_mode = 2
+
+[node name="StartSkill" type="HBoxContainer" parent="Panel/Info/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="Panel/Info/VBoxContainer/StartSkill"]
+layout_mode = 2
+text = "初始技能"
+label_settings = SubResource("LabelSettings_ady3o")
+
+[node name="PopupIcon" parent="Panel/Info/VBoxContainer/StartSkill" instance=ExtResource("5_vggt4")]
+layout_mode = 2
+
+[node name="TextureRect" parent="Panel/Info/VBoxContainer/StartSkill/PopupIcon" index="0"]
+offset_right = 50.0
+offset_bottom = 100.0
+texture = ExtResource("6_qshse")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="Buttons" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 1101.0
+offset_top = 492.0
+offset_right = 1301.0
+offset_bottom = 742.0
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="StartButton" type="Button" parent="Panel/Buttons"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_rdy3w")
+theme_override_font_sizes/font_size = 32
+text = "开始探险"
+
+[node name="QuitButton" type="Button" parent="Panel/Buttons"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_rdy3w")
+theme_override_font_sizes/font_size = 32
+text = "返回标题"
+
+[connection signal="pressed" from="Panel/Players/Player0" to="." method="ShowCharacter" binds= [0]]
+[connection signal="pressed" from="Panel/Players/Player1" to="." method="ShowCharacter" binds= [1]]
+[connection signal="mouse_entered" from="Panel/Info/VBoxContainer/StartArtifact/PopupIcon" to="Panel/Info/VBoxContainer/StartArtifact/PopupIcon" method="MouseEnter"]
+[connection signal="mouse_exited" from="Panel/Info/VBoxContainer/StartArtifact/PopupIcon" to="Panel/Info/VBoxContainer/StartArtifact/PopupIcon" method="MouseExit"]
+[connection signal="mouse_entered" from="Panel/Info/VBoxContainer/StartSkill/PopupIcon" to="Panel/Info/VBoxContainer/StartSkill/PopupIcon" method="MouseEnter"]
+[connection signal="mouse_exited" from="Panel/Info/VBoxContainer/StartSkill/PopupIcon" to="Panel/Info/VBoxContainer/StartSkill/PopupIcon" method="MouseExit"]
+[connection signal="pressed" from="Panel/Buttons/StartButton" to="." method="GotoGame"]
+[connection signal="pressed" from="Panel/Buttons/QuitButton" to="." method="GotoMenu"]
+
+[editable path="Panel/Info/VBoxContainer/StartSkill/PopupIcon"]

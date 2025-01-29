@@ -1,0 +1,76 @@
+[gd_scene load_steps=9 format=3 uid="uid://hquk1gi4gins"]
+
+[ext_resource type="Script" path="res://scripts/Tile.cs" id="2_7moub"]
+[ext_resource type="Texture2D" uid="uid://dywxc4n1vjems" path="res://assets/sprites/tiles/0-1.png" id="2_wf7hy"]
+[ext_resource type="Script" path="res://scripts/ui/IconLabel.cs" id="4_6q5x1"]
+[ext_resource type="Texture2D" uid="uid://bv8vtb1lkqgob" path="res://assets/sprites/icons/heart.png" id="5_phneh"]
+[ext_resource type="FontFile" uid="uid://c7ewpvq05lxaj" path="res://assets/fonts/Quenda.ttf" id="6_2po2v"]
+[ext_resource type="FontFile" uid="uid://b07s0gtfp5725" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="6_55lk1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_10o0k"]
+font = ExtResource("6_55lk1")
+font_size = 8
+font_color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_p8rxs"]
+font = ExtResource("6_2po2v")
+font_size = 28
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Tile" type="Node2D" node_paths=PackedStringArray("label", "sprite", "iconLabel")]
+position = Vector2(55, 1)
+script = ExtResource("2_7moub")
+label = NodePath("Label")
+sprite = NodePath("Sprite2D")
+iconLabel = NodePath("IconLabel")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 34)
+scale = Vector2(0.28, 0.28)
+texture = ExtResource("2_wf7hy")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -46.0
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "(1,2)"
+label_settings = SubResource("LabelSettings_10o0k")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IconLabel" type="Control" parent="." node_paths=PackedStringArray("icon", "label")]
+z_index = 5
+layout_mode = 3
+anchors_preset = 0
+offset_left = -23.0
+offset_top = 9.0
+offset_right = 27.0
+offset_bottom = 24.0
+script = ExtResource("4_6q5x1")
+icon = NodePath("Icon")
+label = NodePath("Label")
+
+[node name="Icon" type="TextureRect" parent="IconLabel"]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 0
+offset_left = -19.0
+offset_top = -12.0
+offset_right = 21.0
+offset_bottom = 28.0
+texture = ExtResource("5_phneh")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="IconLabel"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 0
+offset_left = 17.0
+offset_top = -7.0
+offset_right = 55.0
+offset_bottom = 27.0
+text = "99"
+label_settings = SubResource("LabelSettings_p8rxs")
+horizontal_alignment = 1
+vertical_alignment = 1
