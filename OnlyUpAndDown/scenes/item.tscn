@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://08t68ns7quns"]
 
-[ext_resource type="Script" path="res://scripts/Item.cs" id="1_rwjgc"]
-[ext_resource type="Shader" path="res://shaders/sprite_outline.gdshader" id="2_rog3r"]
+[ext_resource type="Script" uid="uid://bdm8owwayjslh" path="res://scripts/Item.cs" id="1_rwjgc"]
+[ext_resource type="Shader" uid="uid://b37oqsjq4a4bd" path="res://shaders/sprite_outline.gdshader" id="2_rog3r"]
 [ext_resource type="Texture2D" uid="uid://bjk6ey4iwmsf0" path="res://assets/sprites/items/blue_potion.png" id="2_rse30"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_815jl"]

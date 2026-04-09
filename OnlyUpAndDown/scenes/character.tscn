@@ -1,7 +1,7 @@
 [gd_scene load_steps=77 format=3 uid="uid://b7u77m3q4xqql"]
 
-[ext_resource type="Script" path="res://scripts/Character.cs" id="2_5ujir"]
-[ext_resource type="Shader" path="res://shaders/sprite_outline.gdshader" id="2_dn10r"]
+[ext_resource type="Script" uid="uid://cu0f6x4ktx85j" path="res://scripts/Character.cs" id="2_5ujir"]
+[ext_resource type="Shader" uid="uid://b37oqsjq4a4bd" path="res://shaders/sprite_outline.gdshader" id="2_dn10r"]
 [ext_resource type="Texture2D" uid="uid://b3bqgecy22kqq" path="res://assets/sprites/characters/cirno.png" id="2_i55cp"]
 [ext_resource type="Texture2D" uid="uid://bdghjkvo241em" path="res://assets/sprites/characters/reimu.png" id="3_qgnbe"]
 [ext_resource type="Texture2D" uid="uid://22ycygy2rugi" path="res://assets/sprites/characters/akyuu.png" id="3_yk7yq"]

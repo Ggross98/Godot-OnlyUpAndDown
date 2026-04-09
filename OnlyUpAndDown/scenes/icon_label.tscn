@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bfkgkva3xrcwq"]
 
-[ext_resource type="Script" path="res://scripts/ui/IconLabel.cs" id="1_qfv71"]
+[ext_resource type="Script" uid="uid://5f8da3f75ffd" path="res://scripts/ui/IconLabel.cs" id="1_qfv71"]
 [ext_resource type="Texture2D" uid="uid://bv8vtb1lkqgob" path="res://assets/sprites/icons/heart.png" id="2_gjop5"]
 [ext_resource type="FontFile" uid="uid://c7ewpvq05lxaj" path="res://assets/fonts/Quenda.ttf" id="3_bq87j"]
 

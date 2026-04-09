@@ -1,12 +1,12 @@
 [gd_scene load_steps=15 format=3 uid="uid://dp8t1m43kwu12"]
 
-[ext_resource type="Script" path="res://scripts/StageSelect.cs" id="1_uhy55"]
+[ext_resource type="Script" uid="uid://dm4og6ccmcanv" path="res://scripts/StageSelect.cs" id="1_uhy55"]
 [ext_resource type="Texture2D" uid="uid://bdghjkvo241em" path="res://assets/sprites/characters/reimu.png" id="2_1a0tb"]
 [ext_resource type="FontFile" uid="uid://cw6cph545w16n" path="res://assets/fonts/LiuSong.ttf" id="2_minin"]
 [ext_resource type="Texture2D" uid="uid://cgbn3rkxv721f" path="res://assets/sprites/characters/marisa.png" id="3_7fvy6"]
 [ext_resource type="FontFile" uid="uid://d0bq3tvnw8p6h" path="res://assets/fonts/FangSong.ttf" id="3_rdy3w"]
 [ext_resource type="PackedScene" uid="uid://cjfydp84d6qyn" path="res://scenes/popup_icon.tscn" id="5_vggt4"]
-[ext_resource type="Script" path="res://scripts/ui/PlayerStatusUI.cs" id="6_8d8b0"]
+[ext_resource type="Script" uid="uid://clpc6fmg5y721" path="res://scripts/ui/PlayerStatusUI.cs" id="6_8d8b0"]
 [ext_resource type="Texture2D" uid="uid://c3og0uq6k11id" path="res://assets/sprites/skills/UNL_Marisaspell1.png" id="6_qshse"]
 [ext_resource type="PackedScene" uid="uid://bfkgkva3xrcwq" path="res://scenes/icon_label.tscn" id="7_g24v5"]
 

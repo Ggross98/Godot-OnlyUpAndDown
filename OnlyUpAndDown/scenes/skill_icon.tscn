@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cm1eeiv7kk5fh"]
 
-[ext_resource type="Script" path="res://scripts/ArtifactIcon.cs" id="1_ca1nm"]
+[ext_resource type="Script" uid="uid://btg88f0013nob" path="res://scripts/ArtifactIcon.cs" id="1_ca1nm"]
 [ext_resource type="Texture2D" uid="uid://dliqch7pm2c62" path="res://assets/sprites/skills/Swr_marisa_spc_02.png" id="2_2pcgl"]
 
 [node name="SkillIcon" type="Control" node_paths=PackedStringArray("rect")]

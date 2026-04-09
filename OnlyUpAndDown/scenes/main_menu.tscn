@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://6ll8hcsb6dvt"]
 
-[ext_resource type="Script" path="res://scripts/MainMenu.cs" id="1_vy60x"]
+[ext_resource type="Script" uid="uid://ddfryund1h0la" path="res://scripts/MainMenu.cs" id="1_vy60x"]
 [ext_resource type="FontFile" uid="uid://coyjmv7l0xhcd" path="res://assets/fonts/PixelSong.ttf" id="2_1dohb"]
 [ext_resource type="FontFile" uid="uid://cw6cph545w16n" path="res://assets/fonts/LiuSong.ttf" id="2_lxm6r"]
 [ext_resource type="FontFile" uid="uid://d0bq3tvnw8p6h" path="res://assets/fonts/FangSong.ttf" id="3_1vsxf"]
-[ext_resource type="Script" path="res://scripts/ui/OverPanel.cs" id="3_wdxwl"]
+[ext_resource type="Script" uid="uid://bxdaf7mie2d87" path="res://scripts/ui/OverPanel.cs" id="3_wdxwl"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xvjtu"]
 font = ExtResource("2_lxm6r")

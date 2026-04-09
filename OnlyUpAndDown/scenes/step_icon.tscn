@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cpq76sch2bx4r"]
 
 [ext_resource type="Texture2D" uid="uid://bcn0t2m8fmvbn" path="res://assets/sprites/icons/button_dark.png" id="1_u5i4q"]
-[ext_resource type="Script" path="res://scripts/ui/StepIcon.cs" id="2_5wxdl"]
+[ext_resource type="Script" uid="uid://brr3erocfrlk2" path="res://scripts/ui/StepIcon.cs" id="2_5wxdl"]
 
 [node name="StepIcon" type="Control" node_paths=PackedStringArray("rect")]
 custom_minimum_size = Vector2(35, 35)

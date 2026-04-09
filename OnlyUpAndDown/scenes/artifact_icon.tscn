@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dtpbc2n5oa7wt"]
 
 [ext_resource type="Texture2D" uid="uid://cvi1ccoenwqpm" path="res://assets/sprites/items/wizard_hat.png" id="1_bb4po"]
-[ext_resource type="Script" path="res://scripts/ArtifactIcon.cs" id="1_s68cf"]
+[ext_resource type="Script" uid="uid://btg88f0013nob" path="res://scripts/ArtifactIcon.cs" id="1_s68cf"]
 
 [node name="ArtifactIcon" type="Control" node_paths=PackedStringArray("rect")]
 custom_minimum_size = Vector2(50, 50)

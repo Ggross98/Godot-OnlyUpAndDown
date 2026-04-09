@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://hquk1gi4gins"]
 
-[ext_resource type="Script" path="res://scripts/Tile.cs" id="2_7moub"]
+[ext_resource type="Script" uid="uid://bqjgg5hw5gfyb" path="res://scripts/Tile.cs" id="2_7moub"]
 [ext_resource type="Texture2D" uid="uid://dywxc4n1vjems" path="res://assets/sprites/tiles/0-1.png" id="2_wf7hy"]
-[ext_resource type="Script" path="res://scripts/ui/IconLabel.cs" id="4_6q5x1"]
+[ext_resource type="Script" uid="uid://5f8da3f75ffd" path="res://scripts/ui/IconLabel.cs" id="4_6q5x1"]
 [ext_resource type="Texture2D" uid="uid://bv8vtb1lkqgob" path="res://assets/sprites/icons/heart.png" id="5_phneh"]
 [ext_resource type="FontFile" uid="uid://c7ewpvq05lxaj" path="res://assets/fonts/Quenda.ttf" id="6_2po2v"]
 [ext_resource type="FontFile" uid="uid://b07s0gtfp5725" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="6_55lk1"]

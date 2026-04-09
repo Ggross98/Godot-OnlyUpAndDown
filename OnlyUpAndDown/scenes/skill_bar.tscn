@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://d1bv4cyy0dvle"]
 
-[ext_resource type="Script" path="res://scripts/ui/SkillBar.cs" id="1_b22lc"]
+[ext_resource type="Script" uid="uid://wupqs7sppp73" path="res://scripts/ui/SkillBar.cs" id="1_b22lc"]
 [ext_resource type="Texture2D" uid="uid://cqr3ipu340yy4" path="res://assets/sprites/icons/switch_west_light.png" id="2_2f75r"]
 [ext_resource type="Texture2D" uid="uid://cgoqybawmpthk" path="res://assets/sprites/skills/UNL_Reimu201.png" id="2_5rm17"]
 [ext_resource type="FontFile" uid="uid://b07s0gtfp5725" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_1mcr4"]

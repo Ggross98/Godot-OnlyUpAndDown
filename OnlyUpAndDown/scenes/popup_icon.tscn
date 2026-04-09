@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cjfydp84d6qyn"]
 
-[ext_resource type="Script" path="res://scripts/ui/PopupIcon.cs" id="1_ufdq6"]
+[ext_resource type="Script" uid="uid://bfoov4s33uets" path="res://scripts/ui/PopupIcon.cs" id="1_ufdq6"]
 [ext_resource type="Texture2D" uid="uid://cvi1ccoenwqpm" path="res://assets/sprites/items/wizard_hat.png" id="2_kg0op"]
 
 [node name="PopupIcon" type="Control" node_paths=PackedStringArray("rect")]
